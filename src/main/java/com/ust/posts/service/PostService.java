@@ -21,4 +21,9 @@ public class PostService {
         Post[] posts = restTemplate.getForObject(url, Post[].class);
         return Arrays.asList(posts);
     }
+
+    public Post getPost(int id){
+        String url = "https://jsonplaceholder.typicode.com/posts/" + id;
+        return restTemplate.getForObject(url, Post.class);
+    }
 }

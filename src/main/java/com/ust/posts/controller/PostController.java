@@ -4,6 +4,7 @@ import com.ust.posts.model.Post;
 import com.ust.posts.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +24,10 @@ public class PostController {
     @GetMapping
     public List<Post> getAllPosts(){
         return postService.getPosts();
+    }
+
+    @GetMapping("/{id}")
+    public Post getPost(@PathVariable int id){
+        return postService.getPost(id);
     }
 }
