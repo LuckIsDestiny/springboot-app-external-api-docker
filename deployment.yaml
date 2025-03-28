@@ -15,6 +15,7 @@ spec:
       containers:
         - name: springboot-app
           image: luckisdestiny/springboot-app-external-api
+          imagePullPolicy: Always
           ports:
             - containerPort: 9091
           env:
