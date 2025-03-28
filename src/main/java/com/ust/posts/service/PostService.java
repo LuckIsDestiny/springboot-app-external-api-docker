@@ -22,8 +22,8 @@ public class PostService {
         return Arrays.asList(posts);
     }
 
-    public Post getPost(int id){
-        String url = "https://jsonplaceholder.typicode.com/posts/" + id;
+    public Post getPost(int userId){
+        String url = "https://jsonplaceholder.typicode.com/posts/" + userId;
         return restTemplate.getForObject(url, Post.class);
     }
 }
